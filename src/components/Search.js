@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { fetchSearch } from '../actions/albumsAction';
 import { useDispatch } from 'react-redux';
 
@@ -16,8 +16,10 @@ const Search = () => {
 		}
 	};
 
-	const searchArtist = () => {
+	const searchArtist = (e) => {
+		// e.preventDefault();
 		dispatch(fetchSearch(query));
+		setQuery('');
 	};
 	console.log('Search 22', query);
 	return (

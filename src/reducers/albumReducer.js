@@ -1,5 +1,4 @@
 const initState = {
-	albums: [],
 	popularSongs: [],
 	searched: []
 };
