@@ -15,22 +15,19 @@ const Home = () => {
 		[ dispatch ]
 	);
 	//GET ALBUMS FROM API
-	const { albums, popularSongs } = useSelector((state) => state.artist);
-	console.log(albums);
-	console.log(popularSongs);
+	const { popularSongs } = useSelector((state) => state.artist);
+	console.log('popularsongs', popularSongs);
+	// console.log('albums', albums);
 
-	let noDupList = [ ...new Map(albums.map((item) => [ item['name'], item ])).values() ];
-	let noDupPopularSongs = [ ...new Map(popularSongs.map((item) => [ item['name'], item ])).values() ];
+	// let noDupList = [ ...new Map(albums.map((item) => [ item['name'], item ])).values() ];
+	// let noDupPopularSongs = [ ...new Map(popularSongs.map((item) => [ item['name'], item ])).values() ];
 
-	console.log(noDupList);
-	console.log(noDupPopularSongs);
-	// console.log('popularsongs', popularSongs);
 	return (
 		<div>
 			<AlbumList>
 				<h1>Popular Songs </h1>
 				<Albums>
-					{noDupPopularSongs.map((album) => (
+					{popularSongs.map((album) => (
 						<Album
 							name={album.album.name}
 							released={album.release_date}

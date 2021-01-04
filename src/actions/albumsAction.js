@@ -3,33 +3,29 @@ import axios from 'axios';
 //ACTION CREATOR
 
 export const loadAlbums = () => async (dispatch) => {
-	const albumData = await axios.get('https://api.spotify.com/v1/artists/4gzpq5DPGxSnKTe4SA8HAU/albums?limit=50', {
+	const API_ADDRESS = 'https://spotify-api-wrapper.appspot.com';
+	let artistQuery = 'coldplay';
+	const popularArtistData = await axios.get(`${API_ADDRESS}/artist/${artistQuery}`, {
 		headers: {
 			Accept: 'application/json',
-			'Content-Type': 'application/json',
-			Authorization:
-				'Bearer BQAahFpatI1nhsPMK7lEnhicXeFxvSdw5zE3aWQXF9OzYooeFW0xoqH056SaMLtUED67sqrY8T2MVxUAnn-tsl4CWMTXm1mCSG7geQYO2Y1xNQXdcaAZJqZlMXEzrLhTqMoeIfrfJ6MOY_hcYGPhLNVp-8CkD7FhvIhAPeLi0E2GnqVL3atuRl6kUoF8bsjcl3n0U0VQKPh9f2aHZ45rIw'
+			'Content-Type': 'application/json'
 		}
 	});
-	const popularSongData = await axios.get(
-		'https://api.spotify.com/v1/artists/4gzpq5DPGxSnKTe4SA8HAU/top-tracks?market=US',
-		{
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-				Authorization:
-					'Bearer BQAahFpatI1nhsPMK7lEnhicXeFxvSdw5zE3aWQXF9OzYooeFW0xoqH056SaMLtUED67sqrY8T2MVxUAnn-tsl4CWMTXm1mCSG7geQYO2Y1xNQXdcaAZJqZlMXEzrLhTqMoeIfrfJ6MOY_hcYGPhLNVp-8CkD7FhvIhAPeLi0E2GnqVL3atuRl6kUoF8bsjcl3n0U0VQKPh9f2aHZ45rIw'
-			}
-		}
-	);
+	console.log(popularArtistData, 'populartistdata');
+	const artist = popularArtistData.data.artists.items[0];
+	console.log(artist, 'artistid');
 
-	// .then((res) => {
-	// 	console.log(res.data);
-	// });
+	const popularSongData = await axios.get(`${API_ADDRESS}/artist/${artist.id}/top-tracks`, {
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json'
+		}
+	});
+	console.log(popularSongData, 'popularSongData');
+
 	dispatch({
 		type: 'FETCH_ALBUMS',
 		payload: {
-			albums: albumData.data.items,
 			popularSongs: popularSongData.data.tracks
 		}
 	});
