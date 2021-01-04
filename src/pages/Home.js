@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadAlbums } from '../actions/albumsAction';
 import Album from '../components/Album';
+import Search from '../components/Search';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -16,16 +17,13 @@ const Home = () => {
 	);
 	//GET ALBUMS FROM API
 	const { popularSongs } = useSelector((state) => state.artist);
-	console.log('popularsongs', popularSongs);
-	// console.log('albums', albums);
-
-	// let noDupList = [ ...new Map(albums.map((item) => [ item['name'], item ])).values() ];
-	// let noDupPopularSongs = [ ...new Map(popularSongs.map((item) => [ item['name'], item ])).values() ];
 
 	return (
 		<div>
 			<AlbumList>
-				<h1>Popular Songs </h1>
+				<Search />
+				<h1>Artist: </h1>
+				<h1>Popular Songs - </h1>
 				<Albums>
 					{popularSongs.map((album) => (
 						<Album
@@ -39,7 +37,7 @@ const Home = () => {
 					))}
 				</Albums>
 			</AlbumList>
-			popularSongs()
+			{/* popularSongs() */}
 		</div>
 	);
 };

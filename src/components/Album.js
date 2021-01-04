@@ -13,11 +13,10 @@ const Album = ({ name, released, image, href, songName }) => {
 			<p>{released}</p>
 			<img src={image} alt={name} />
 			<h2>Song: {songName}</h2>
-			{/* <button href={href} onClick={btnClick}> */}
+
 			<video href={href} controls name="media">
 				<source src={href} type="audio/mpeg" />
 			</video>
-			{/* </button> */}
 		</StyledAlbum>
 	);
 };
@@ -27,7 +26,7 @@ min-height: 30vh;
 box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
 text-align: center;
 border-radius: 1rem;
-  img {
+  img {  
     width: 100%;
     height: 50vh;
     

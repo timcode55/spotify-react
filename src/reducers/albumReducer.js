@@ -1,13 +1,15 @@
 const initState = {
 	albums: [],
-	popularSongs: []
-	// searched: []
+	popularSongs: [],
+	searched: []
 };
 
 const albumsReducer = (state = initState, action) => {
 	switch (action.type) {
-		case 'FETCH_ALBUMS':
+		case 'FETCH_SONGS':
 			return { ...state, popularSongs: action.payload.popularSongs };
+		case 'FETCH_SEARCHED':
+			return { ...state, searched: action.payload.searched };
 		default:
 			return { ...state };
 	}
