@@ -7,6 +7,12 @@ export const loadSongs = (artistQuery = 'coldplay') => async (dispatch) => {
 	//FETCH AXIOS
 
 	const artistId = await axios.get(`${artistData}${artistQuery}`);
+	dispatch({
+		type: 'FETCH_ARTIST',
+		payload: {
+			artistData: artistId.data
+		}
+	});
 	const artist = artistId.data.artists.items[0];
 	const popularSongs = await axios.get(`${popularSongData}${artist.id}/top-tracks`);
 	dispatch({
@@ -19,6 +25,12 @@ export const loadSongs = (artistQuery = 'coldplay') => async (dispatch) => {
 
 export const fetchSearch = (name) => async (dispatch) => {
 	const artistId = await axios.get(`${artistData}${name}`);
+	dispatch({
+		type: 'FETCH_ARTIST',
+		payload: {
+			artistData: artistId.data
+		}
+	});
 	const artist = artistId.data.artists.items[0];
 	const popularSongs = await axios.get(`${popularSongData}${artist.id}/top-tracks`);
 

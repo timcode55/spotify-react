@@ -2,10 +2,13 @@ import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { loadSongs } from '../actions/albumsAction';
-import Album from '../components/Album';
+import Album from '../components/album/Album';
 import Search from '../components/Search';
+import Artist from '../Artist';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+
+import './Home.css';
 
 const Home = () => {
 	const dispatch = useDispatch();
@@ -16,17 +19,18 @@ const Home = () => {
 		[ dispatch ]
 	);
 	//GET ALBUMS FROM API
-	const { popularSongs, searched } = useSelector((state) => state.artist);
+	const { popularSongs, searched, artistData } = useSelector((state) => state.artist);
+	console.log('popularSongs Home 20', popularSongs);
+	console.log('searched Home 21', searched);
+	console.log('artistData Home 22', artistData);
 
 	return (
-		<div>
+		<div className="main-container">
 			<AlbumList>
 				<Search loadSongs={loadSongs} />
-				<h1>Artist: </h1>
-				<h1>Popular Songs - </h1>
+				<Artist artistData={artistData} />
 				{searched.length ? (
 					<div className="searched">
-						<h2>Searched Games</h2>
 						<Albums>
 							{searched.map((album) => (
 								<Album
@@ -41,20 +45,19 @@ const Home = () => {
 						</Albums>
 					</div>
 				) : (
-					''
+					<Albums>
+						{popularSongs.map((album) => (
+							<Album
+								name={album.album.name}
+								released={album.release_date}
+								image={album.album.images[0].url}
+								href={album.preview_url}
+								key={album.id}
+								songName={album.name}
+							/>
+						))}
+					</Albums>
 				)}
-				<Albums>
-					{popularSongs.map((album) => (
-						<Album
-							name={album.album.name}
-							released={album.release_date}
-							image={album.album.images[0].url}
-							href={album.preview_url}
-							key={album.id}
-							songName={album.name}
-						/>
-					))}
-				</Albums>
 			</AlbumList>
 			{/* popularSongs() */}
 		</div>
@@ -68,7 +71,7 @@ const AlbumList = styled(motion.div)`
 const Albums = styled(motion.div)`
 min-height: 80vh;
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 grid-column-gap: 3rem;
 grid-row-gap: 5rem;
 `;

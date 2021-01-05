@@ -1,0 +1,37 @@
+.artist-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.band-title {
+	color: white;
+	font-size: 3rem;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.artist-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+}
+
+.h3 {
+	font-size: 1.5rem;
+}
+
+.band-image {
+	width: 30%;
+	border-radius: 50%;
+}
+
+.popular {
+	display: flex;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	justify-content: center;
+	font-size: 3rem;
+	color: white;
+}

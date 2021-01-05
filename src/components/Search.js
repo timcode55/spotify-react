@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { fetchSearch } from '../actions/albumsAction';
 import { useDispatch } from 'react-redux';
+import './Search.css';
 
 const Search = () => {
 	const dispatch = useDispatch();
@@ -23,15 +24,17 @@ const Search = () => {
 	};
 	console.log('Search 22', query);
 	return (
-		<div>
+		<div className="search-container">
 			<input
-				type="text"
+				type="search"
+				className="searchField"
 				value={query}
 				onChange={updateArtist}
 				onKeyPress={handleKeyPress}
 				placeholder="Search for an Artist"
 			/>
-			<button onClick={searchArtist}>Search</button>
+			{/* <button onClick={searchArtist}>Search</button> */}
+			<input type="submit" className="submit" value="Search" />
 		</div>
 	);
 };

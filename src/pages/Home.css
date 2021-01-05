@@ -1,0 +1,5 @@
+.main-container {
+	max-width: 5000px;
+	display: flex;
+	justify-content: center;
+}
