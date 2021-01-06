@@ -11,11 +11,11 @@ const Album = ({ name, released, image, href, songName }) => {
 	return (
 		<StyledAlbum>
 			<div className="album-container">
-				<h3>Album: {name}</h3>
+				<h3 className="album-title">Album: {name}</h3>
 				<p>{released}</p>
 				<img className="album-image" src={image} alt={name} />
 				<div className="bottom">
-					<h2>Song: {songName}</h2>
+					<h2 className="song-title">Song: {songName}</h2>
 
 					<video className="video" href={href} controls name="media">
 						<source src={href} type="audio/mpeg" />

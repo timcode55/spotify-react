@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* font-family: 'IBM Plex Mono', monospace;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
 .album-container {
 	/* #a2a633 */
 	background-color: #c9cd65;
@@ -8,6 +14,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	/* font-family: 'IBM Plex Mono', monospace;
+	font-weight: 100; */
 }
 
 .album-image {
@@ -18,4 +26,11 @@
 .video {
 	height: 4rem;
 	width: 100%;
+}
+
+.song-title,
+.album-title {
+	font-family: 'IBM Plex Mono', monospace;
+	font-weight: 500;
+	font-size: 1.2rem;
 }

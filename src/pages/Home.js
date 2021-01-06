@@ -28,7 +28,7 @@ const Home = () => {
 		<div className="main-container">
 			<AlbumList>
 				<Search loadSongs={loadSongs} />
-				<Artist artistData={artistData} />
+				<Artist artistData={artistData} popularSongs={popularSongs} />
 				{searched.length ? (
 					<div className="searched">
 						<Albums>
