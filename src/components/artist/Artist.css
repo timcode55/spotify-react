@@ -6,7 +6,7 @@ font-family: 'Roboto', sans-serif; */
 
 .artist-container {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 	margin-top: 50px;
 }
@@ -15,7 +15,7 @@ font-family: 'Roboto', sans-serif; */
 	color: white;
 	font-size: 3rem;
 	font-family: 'IBM Plex Mono', monospace;
-
+	letter-spacing: -1px;
 	text-transform: uppercase;
 	font-weight: 100;
 }
@@ -24,12 +24,13 @@ font-family: 'Roboto', sans-serif; */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 20px;
+	line-height: 10px;
 	font-family: 'IBM Plex Mono', monospace;
 	color: rgb(4, 4, 4);
 	text-transform: uppercase;
 	font-weight: 100;
 	font-size: 1.5rem;
+	margin: 0 auto;
 }
 
 .h3 {
@@ -40,6 +41,7 @@ font-family: 'Roboto', sans-serif; */
 	width: 30%;
 	border-radius: 50%;
 	box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
+	margin: 0 auto;
 }
 
 .popular {
@@ -47,8 +49,91 @@ font-family: 'Roboto', sans-serif; */
 	margin-bottom: 50px;
 	margin-top: 50px;
 	justify-content: center;
-	font-family: 'Montserrat', sans-serif;
+	/* margin: auto 0; */
+	font-family: 'IBM Plex Mono', monospace;
+	text-transform: uppercase;
 	font-weight: 100;
 	font-size: 3rem;
 	color: white;
+}
+
+@media only screen and (max-width: 1130px) {
+	.band-title {
+		font-size: 2rem;
+	}
+
+	.artist-info {
+		font-size: 1rem;
+	}
+}
+
+@media only screen and (max-width: 840px) {
+	.band-title {
+		font-size: 1.5rem;
+	}
+
+	.artist-info {
+		font-size: .9rem;
+	}
+}
+
+@media only screen and (max-width: 585px) {
+	.band-title {
+		font-size: .9rem;
+	}
+
+	.artist-info {
+		font-size: .7rem;
+		width: 30vw;
+	}
+
+	.popular {
+		font-size: 2rem;
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	.band-title {
+		font-size: .9rem;
+	}
+
+	.artist-info {
+		font-size: .7rem;
+		width: 40vw;
+	}
+
+	.main-container {
+		width: 100vw;
+	}
+}
+
+@media only screen and (max-width: 406px) {
+	.artist-info {
+		font-size: .7rem;
+		width: 55vw;
+	}
+
+	.artist-container {
+		width: 70%;
+		margin: 20px auto;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	.popular {
+		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 300px) {
+	.band-image {
+		margin-top: 2rem;
+		width: 40vw;
+	}
+
+	.artist-container {
+		width: 60%;
+		margin: 20px auto;
+		flex-direction: column;
+	}
 }

@@ -43,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
         color: #333;
     }
     img{
-        display: block;
+      display: block; 
     }
     input{
         font-weight: bold;

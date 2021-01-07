@@ -35,7 +35,6 @@ const Home = () => {
 							{searched.map((album) => (
 								<Album
 									name={album.album.name}
-									released={album.release_date}
 									image={album.album.images[0].url}
 									href={album.preview_url}
 									key={album.id}
@@ -49,7 +48,6 @@ const Home = () => {
 						{popularSongs.map((album) => (
 							<Album
 								name={album.album.name}
-								released={album.release_date}
 								image={album.album.images[0].url}
 								href={album.preview_url}
 								key={album.id}
@@ -74,6 +72,13 @@ display: grid;
 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 grid-column-gap: 3rem;
 grid-row-gap: 5rem;
+align-content: center;
+align-items: center;
+justify-content: center;
+
+.sc-dlfnbm {
+  width: 500px;
+}
 `;
 
 export default Home;
