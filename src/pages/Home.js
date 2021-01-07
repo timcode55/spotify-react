@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loadSongs } from '../actions/albumsAction';
 import Album from '../components/album/Album';
 import Search from '../components/Search';
-import Artist from '../Artist';
+import Artist from '../components/artist/Artist';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 

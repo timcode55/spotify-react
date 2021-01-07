@@ -11,10 +11,3 @@ html,
 body {
 	overflow-x: hidden;
 }
-
-@media only screen and (max-width: 550px) {
-	.main-container {
-		/* display: grid;
-		grid-template-columns: auto; */
-	}
-}

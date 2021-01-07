@@ -1,5 +1,5 @@
 import React from 'react';
-import './components/artist/Artist.css';
+import './Artist.css';
 
 const Artist = (props) => {
 	console.log(props, 'props artist.js');

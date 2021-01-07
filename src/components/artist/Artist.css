@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
-/* font-family: 'IBM Plex Mono', monospace;
-font-family: 'Montserrat', sans-serif;
-font-family: 'Roboto', sans-serif; */
-
 .artist-container {
 	display: flex;
 	justify-content: center;
@@ -33,10 +29,6 @@ font-family: 'Roboto', sans-serif; */
 	margin: 0 auto;
 }
 
-.h3 {
-	/* font-size: 1.5rem; */
-}
-
 .band-image {
 	width: 30%;
 	border-radius: 50%;
@@ -49,7 +41,6 @@ font-family: 'Roboto', sans-serif; */
 	margin-bottom: 50px;
 	margin-top: 50px;
 	justify-content: center;
-	/* margin: auto 0; */
 	font-family: 'IBM Plex Mono', monospace;
 	text-transform: uppercase;
 	font-weight: 100;
