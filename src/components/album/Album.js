@@ -4,7 +4,6 @@ import './Album.css';
 const Album = ({ name, image, href, songName }) => {
 	function btnClick() {
 		window.open(href);
-		console.log('href', href);
 	}
 	return (
 		<div className="album-container">

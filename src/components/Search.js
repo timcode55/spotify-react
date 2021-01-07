@@ -18,11 +18,10 @@ const Search = () => {
 	};
 
 	const searchArtist = (e) => {
-		// e.preventDefault();
 		dispatch(fetchSearch(query));
 		setQuery('');
 	};
-	console.log('Search 22', query);
+
 	return (
 		<div className="search-container">
 			<input
@@ -33,7 +32,6 @@ const Search = () => {
 				onKeyPress={handleKeyPress}
 				placeholder="Search for an Artist"
 			/>
-			{/* <button onClick={searchArtist}>Search</button> */}
 			<input type="submit" className="submit" value="Search" />
 		</div>
 	);

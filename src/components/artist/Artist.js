@@ -2,7 +2,6 @@ import React from 'react';
 import './Artist.css';
 
 const Artist = (props) => {
-	console.log(props, 'props artist.js');
 	return (
 		<div>
 			<div className="artist-container">

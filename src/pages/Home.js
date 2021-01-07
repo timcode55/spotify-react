@@ -20,9 +20,6 @@ const Home = () => {
 	);
 	//GET ALBUMS FROM API
 	const { popularSongs, searched, artistData } = useSelector((state) => state.artist);
-	console.log('popularSongs Home 20', popularSongs);
-	console.log('searched Home 21', searched);
-	console.log('artistData Home 22', artistData);
 
 	return (
 		<div className="main-container">
